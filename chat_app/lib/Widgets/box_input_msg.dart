@@ -24,8 +24,6 @@ class _MessageInputBoxState extends State<MessageInputBox> {
           IconButton(
             icon: Icon(Icons.send),
             onPressed: () {
-              // Handle sending the message
-              // Add your logic to send the message
             },
           ),
         ],
