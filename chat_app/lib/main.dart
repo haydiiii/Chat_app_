@@ -1,4 +1,4 @@
-import 'package:chat_app/chat/chat_home.dart';
+import 'package:chat_app/chat/chat_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +10,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: ChatHome());
+    return MaterialApp(
+        theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.white),
+        )),
+        debugShowCheckedModeBanner: false,
+        home: const ChatView());
   }
 }

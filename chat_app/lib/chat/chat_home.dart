@@ -1,6 +1,11 @@
-import 'package:chat_app/Widgets/box_input_msg.dart';
+import 'dart:ui';
+
+import 'package:chat_app/Widgets/message_box.dart';
 import 'package:chat_app/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class ChatHome extends StatefulWidget {
@@ -11,6 +16,13 @@ class ChatHome extends StatefulWidget {
 }
 
 class _ChatHomeState extends State<ChatHome> {
+  final List<String> messages = [
+    "Message 1",
+    "Message 2",
+    "Message 3",
+    "Message 4",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,48 +36,66 @@ class _ChatHomeState extends State<ChatHome> {
           )
         ],
         title: Text(
-          'Chat Home',
+          'HAYDI',
           style: TextStyle(color: AppColor.white),
         ),
         centerTitle: true,
       ),
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          CircleAvatar(
-            backgroundImage: AssetImage('assets/3.jpg'),
+      body: Container(
+        padding: const EdgeInsets.symmetric(vertical: 10),
+        decoration: BoxDecoration(
+          color: AppColor.white,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(40),
+            topRight: Radius.circular(40),
           ),
-          Center(
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-              Text(
-                '10:00 pm',
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Text('10:10 pm'),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: messages.length,
+                  itemBuilder: (context, index) {
+                    return MessageBox(message: messages[index]);
+                  },
+                ),
               ),
-              Container(
-                margin: EdgeInsets.only(left: 10, right: 10, top: 20),
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: AppColor.secondry,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
-                        bottomLeft: Radius.circular(30))),
-                child: Text('hii how are you'),
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 10, right: 10, top: 20),
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: AppColor.secondry,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(30),
-                        topRight: Radius.circular(30),
-                        bottomLeft: Radius.circular(30))),
-                child: Text('hii how are you'),
-              ),
-            ]),
-          )
-        ],
+              const Spacer(),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      maxLines: 7,
+                      minLines: 1,
+                      textAlign: TextAlign.start,
+                      decoration: InputDecoration(
+                        suffixIcon: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.send,
+                            color: AppColor.primary,
+                          ),
+                        ),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 15, horizontal: 15),
+                        border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(30)),
+                        fillColor: const Color.fromARGB(255, 217, 212, 212),
+                        filled: true,
+                        hintText: 'Type your message here',
+                      ),
+                    ),
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
