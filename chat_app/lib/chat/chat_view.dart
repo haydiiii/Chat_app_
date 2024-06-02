@@ -1,9 +1,7 @@
 import 'package:chat_app/Widgets/fav_contacts.dart';
 import 'package:chat_app/Widgets/info_lst_msg.dart';
-import 'package:chat_app/colors.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ChatView extends StatelessWidget {
   const ChatView({super.key});
@@ -29,15 +27,14 @@ class ChatView extends StatelessWidget {
               color: AppColor.white, fontSize: 25, fontWeight: FontWeight.bold),
         ),
       ),
-      body: Column(
+      body: const Column(
         children: [
-          Fav_Contacts(),
-          info_msg(
-            image: 'assets/image1.jpg',
-            lstmsg: 'How are you',
-            name: ' Haydi khattab',
-            time: '12:00 pm' 
-          )
+          FavContacts(),
+          MssageInfo(
+              image: 'assets/image1.jpg',
+              lstmsg: 'How are you',
+              name: ' Haydi khattab',
+              time: '12:00 pm')
         ],
       ),
     );

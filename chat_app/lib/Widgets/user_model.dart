@@ -25,7 +25,7 @@ List<UserInfo> users = [
       time: '12:00 pm',
       ontap: (context) {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChatHome()),
+          MaterialPageRoute(builder: (context) => const ChatHome()),
         );
       }),
   UserInfo(
@@ -35,7 +35,7 @@ List<UserInfo> users = [
       time: '11:00pm',
       ontap: (context) {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChatHome()),
+          MaterialPageRoute(builder: (context) => const ChatHome()),
         );
       }),
   UserInfo(
@@ -45,7 +45,7 @@ List<UserInfo> users = [
       time: '1:50 pm',
       ontap: (context) {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChatHome()),
+          MaterialPageRoute(builder: (context) => const ChatHome()),
         );
       }),
   UserInfo(
@@ -55,7 +55,7 @@ List<UserInfo> users = [
       time: '5:20 am',
       ontap: (context) {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChatHome()),
+          MaterialPageRoute(builder: (context) => const ChatHome()),
         );
       }),
   UserInfo(
@@ -65,7 +65,7 @@ List<UserInfo> users = [
       time: '11:00pm',
       ontap: (context) {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChatHome()),
+          MaterialPageRoute(builder: (context) => const ChatHome()),
         );
       }),
   UserInfo(
@@ -75,7 +75,7 @@ List<UserInfo> users = [
       time: '1:50 pm',
       ontap: (context) {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChatHome()),
+          MaterialPageRoute(builder: (context) => const ChatHome()),
         );
       }),
   UserInfo(
@@ -85,7 +85,7 @@ List<UserInfo> users = [
       time: '12:00 pm',
       ontap: (context) {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChatHome()),
+          MaterialPageRoute(builder: (context) => const ChatHome()),
         );
       }),
 ];

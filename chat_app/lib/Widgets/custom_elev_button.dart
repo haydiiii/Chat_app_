@@ -1,8 +1,8 @@
-import 'package:chat_app/colors.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class elevButton extends StatelessWidget {
-  const elevButton({
+class CustElevatedButton extends StatelessWidget {
+  const CustElevatedButton({
     super.key,
     required this.onPressed,
     required this.name,
@@ -21,10 +21,7 @@ class elevButton extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)),
               foregroundColor: AppColor.white,
               backgroundColor: AppColor.primary),
-          onPressed: () {
-            // Navigator.of(context).push(
-            //     MaterialPageRoute(builder: (context) => ResultView()));
-          },
+          onPressed: onPressed,
           child: Text(
             name,
             style: const TextStyle(

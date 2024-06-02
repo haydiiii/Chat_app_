@@ -1,4 +1,4 @@
-import 'package:chat_app/chat/chat_view.dart';
+import 'package:chat_app/auth/sign_up.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,6 +16,6 @@ class MainApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.white),
         )),
         debugShowCheckedModeBanner: false,
-        home: const ChatView());
+        home: const SignUp());
   }
 }

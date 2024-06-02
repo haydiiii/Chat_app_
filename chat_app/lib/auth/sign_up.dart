@@ -1,11 +1,12 @@
 import 'package:chat_app/Widgets/custom_elev_button.dart';
 import 'package:chat_app/Widgets/custom_txt_formfield.dart';
 import 'package:chat_app/auth/sign_in.dart';
-import 'package:chat_app/colors.dart';
+import 'package:chat_app/core/constants/text_style.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class SignUp extends StatefulWidget {
-  SignUp({super.key});
+  const SignUp({super.key});
   @override
   State<SignUp> createState() => _SignUpState();
 }
@@ -31,33 +32,27 @@ class _SignUpState extends State<SignUp> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Text(
-                  'Create an account',
-                  style: TextStyle(
-                      color: AppColor.primary,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 25),
-                ),
+                Text('Create an account', style: TextAppStyle.textTitle),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
-                const Text_form_field(
+                const CustomTxtFormField(
                   label: 'Name',
                   prefix: Icons.person,
                   suffix: null,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
-                const Text_form_field(
+                const CustomTxtFormField(
                   label: 'Email',
                   prefix: Icons.email,
                   suffix: null,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
-                Text_form_field(
+                CustomTxtFormField(
                   obsecuretext: isNotVisible,
                   label: 'Password',
                   prefix: Icons.lock,
@@ -72,9 +67,9 @@ class _SignUpState extends State<SignUp> {
                           : Icons.remove_red_eye)),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
-                elevButton(
+                CustElevatedButton(
                   name: 'Register',
                   onPressed: () {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(
@@ -89,7 +84,10 @@ class _SignUpState extends State<SignUp> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('if u have an account '),
+                      Text(
+                        'if u have an account',
+                        style: TextAppStyle.smallText(),
+                      ),
                       const SizedBox(
                         width: 2,
                       ),
@@ -100,7 +98,9 @@ class _SignUpState extends State<SignUp> {
                               builder: (context) => const SignIn(),
                             ));
                           },
-                          child: const Text('Login in'))
+                          child: Text('Login in',
+                              style: TextAppStyle.textBody(
+                                  color: AppColor.primary))),
                     ],
                   ),
                 )

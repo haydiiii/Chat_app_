@@ -1,12 +1,8 @@
-import 'dart:ui';
 
 import 'package:chat_app/Widgets/message_box.dart';
-import 'package:chat_app/colors.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
+
 
 class ChatHome extends StatefulWidget {
   const ChatHome({super.key});
@@ -36,7 +32,7 @@ class _ChatHomeState extends State<ChatHome> {
           )
         ],
         title: Text(
-          'HAYDI',
+'HAYDI',
           style: TextStyle(color: AppColor.white),
         ),
         centerTitle: true,

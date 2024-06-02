@@ -1,4 +1,4 @@
-import 'package:chat_app/colors.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class MessageBox extends StatelessWidget {

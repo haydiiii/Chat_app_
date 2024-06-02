@@ -1,10 +1,10 @@
 import 'package:chat_app/Widgets/user_model.dart';
 import 'package:chat_app/chat/chat_home.dart';
-import 'package:chat_app/colors.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class info_msg extends StatelessWidget {
-  const info_msg({
+class MssageInfo extends StatelessWidget {
+  const MssageInfo({
     super.key,
     required this.name,
     required this.image,
@@ -23,14 +23,14 @@ class info_msg extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => ChatHome()),
+            MaterialPageRoute(builder: (context) => const ChatHome()),
           );
         },
         child: Container(
-          padding: EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 10),
           decoration: BoxDecoration(
               color: AppColor.white,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(40), topRight: Radius.circular(40))),
           child: ListView.separated(
               itemBuilder: (context, index) {
@@ -44,7 +44,7 @@ class info_msg extends StatelessWidget {
                         backgroundColor: AppColor.grey,
                         backgroundImage: AssetImage(users[index].image),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 1,
                       ),
                       Expanded(
@@ -52,7 +52,7 @@ class info_msg extends StatelessWidget {
                           children: [
                             Text(
                               users[index].name,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: AppColor.primary,
                                   fontSize: 11,
                                   fontWeight: FontWeight.w500),
@@ -67,7 +67,7 @@ class info_msg extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         users[index].time,
                         style: TextStyle(color: AppColor.grey),
@@ -77,7 +77,7 @@ class info_msg extends StatelessWidget {
                 );
               },
               separatorBuilder: (context, index) {
-                return Divider(
+                return const Divider(
                   endIndent: 15,
                   indent: 15,
                 );

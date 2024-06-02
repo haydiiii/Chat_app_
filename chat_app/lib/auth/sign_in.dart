@@ -2,7 +2,8 @@ import 'package:chat_app/Widgets/custom_elev_button.dart';
 import 'package:chat_app/Widgets/custom_txt_formfield.dart';
 import 'package:chat_app/auth/sign_up.dart';
 import 'package:chat_app/chat/chat_view.dart';
-import 'package:chat_app/colors.dart';
+import 'package:chat_app/core/constants/text_style.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 class SignIn extends StatefulWidget {
@@ -31,7 +32,7 @@ class _SignInState extends State<SignIn> {
                   backgroundImage: const AssetImage('assets/preview.jpg'),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 const Text(
                   'Login to ur Account',
@@ -41,20 +42,20 @@ class _SignInState extends State<SignIn> {
                       fontSize: 25),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
-                const Text_form_field(
+                const CustomTxtFormField(
                   label: 'Email',
                   prefix: Icons.email,
                   suffix: null,
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
-                Text_form_field(
+                CustomTxtFormField(
                   obsecuretext: true,
                   label: 'Password',
                   prefix: Icons.lock,
@@ -69,24 +70,28 @@ class _SignInState extends State<SignIn> {
                           : Icons.remove_red_eye_rounded)),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
-                elevButton(
+                CustElevatedButton(
                   name: 'Login',
                   onPressed: () {
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+
+                    Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => const ChatView(),
                     ));
                   },
                 ),
                 const SizedBox(
-                  height: 5,
+                  height: 15,
                 ),
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('if u haven\'t an account '),
+                      Text(
+                        'if u haven\'t an account',
+                        style: TextAppStyle.smallText(),
+                      ),
                       const SizedBox(
                         width: 2,
                       ),
@@ -94,10 +99,12 @@ class _SignInState extends State<SignIn> {
                           onPressed: () {
                             Navigator.of(context)
                                 .pushReplacement(MaterialPageRoute(
-                              builder: (context) => SignUp(),
+                              builder: (context) => const SignUp(),
                             ));
                           },
-                          child: const Text('SignUp'))
+                          child: Text('SignUp',
+                              style: TextAppStyle.textBody(
+                                  color: AppColor.primary)))
                     ],
                   ),
                 )

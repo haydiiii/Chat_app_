@@ -1,16 +1,16 @@
 import 'package:chat_app/Widgets/user_model.dart';
-import 'package:chat_app/colors.dart';
+import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class Fav_Contacts extends StatelessWidget {
-  const Fav_Contacts({
+class FavContacts extends StatelessWidget {
+  const FavContacts({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -21,7 +21,7 @@ class Fav_Contacts extends StatelessWidget {
                 fontSize: 17,
                 fontWeight: FontWeight.w500),
           ),
-          SizedBox(
+          const SizedBox(
             height: 7,
           ),
           SizedBox(
@@ -36,7 +36,7 @@ class Fav_Contacts extends StatelessWidget {
                         backgroundColor: AppColor.grey,
                         backgroundImage: AssetImage(users[index].image),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
@@ -50,7 +50,7 @@ class Fav_Contacts extends StatelessWidget {
                   );
                 },
                 separatorBuilder: (context, index) {
-                  return SizedBox(
+                  return const SizedBox(
                     width: 10,
                   );
                 },
