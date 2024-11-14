@@ -1,20 +1,18 @@
-import 'package:chat_app/Widgets/custom_elev_button.dart';
-import 'package:chat_app/Widgets/custom_txt_formfield.dart';
-import 'package:chat_app/auth/sign_up.dart';
-import 'package:chat_app/chat/chat_view.dart';
+import 'package:chat_app/core/Widgets/custom_elev_button.dart';
+import 'package:chat_app/core/Widgets/custom_txt_formfield.dart';
+import 'package:chat_app/features/auth/presentation/views/sign_in.dart';
 import 'package:chat_app/core/constants/text_style.dart';
 import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
-  const SignIn({super.key});
-
+class SignUp extends StatefulWidget {
+  const SignUp({super.key});
   @override
-  State<SignIn> createState() => _SignInState();
+  State<SignUp> createState() => _SignUpState();
 }
 
-class _SignInState extends State<SignIn> {
-  bool isNotVisable = true;
+class _SignUpState extends State<SignUp> {
+  bool isNotVisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -32,22 +30,23 @@ class _SignInState extends State<SignIn> {
                   backgroundImage: const AssetImage('assets/preview.jpg'),
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 10,
                 ),
-                const Text(
-                  'Login to ur Account',
-                  style: TextStyle(
-                      color: AppColor.primary,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 25),
-                ),
+                Text('Create an account', style: TextAppStyle.textTitle),
                 const SizedBox(
                   height: 15,
+                ),
+                const CustomTxtFormField(
+                  obsecuretext: false,
+                  label: 'Name',
+                  prefix: Icons.person,
+                  suffix: null,
                 ),
                 const SizedBox(
                   height: 15,
                 ),
                 const CustomTxtFormField(
+                  obsecuretext: false,
                   label: 'Email',
                   prefix: Icons.email,
                   suffix: null,
@@ -56,40 +55,40 @@ class _SignInState extends State<SignIn> {
                   height: 15,
                 ),
                 CustomTxtFormField(
-                  obsecuretext: true,
+                  obsecuretext: isNotVisible,
                   label: 'Password',
                   prefix: Icons.lock,
                   suffix: IconButton(
                       onPressed: () {
                         setState(() {
-                          isNotVisable = !isNotVisable;
+                          isNotVisible = !isNotVisible;
                         });
                       },
-                      icon: Icon((isNotVisable)
+                      icon: Icon((isNotVisible)
                           ? Icons.visibility_off_rounded
-                          : Icons.remove_red_eye_rounded)),
+                          : Icons.remove_red_eye)),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 CustElevatedButton(
-                  name: 'Login',
+                  name: 'Register',
                   onPressed: () {
-
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const ChatView(),
+                    
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => const SignIn(),
                     ));
                   },
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 5,
                 ),
                 Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'if u haven\'t an account',
+                        'if u have an account',
                         style: TextAppStyle.smallText(),
                       ),
                       const SizedBox(
@@ -99,12 +98,12 @@ class _SignInState extends State<SignIn> {
                           onPressed: () {
                             Navigator.of(context)
                                 .pushReplacement(MaterialPageRoute(
-                              builder: (context) => const SignUp(),
+                              builder: (context) => const SignIn(),
                             ));
                           },
-                          child: Text('SignUp',
+                          child: Text('Login in',
                               style: TextAppStyle.textBody(
-                                  color: AppColor.primary)))
+                                  color: AppColor.primary))),
                     ],
                   ),
                 )

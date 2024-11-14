@@ -1,5 +1,5 @@
 
-import 'package:chat_app/Widgets/message_box.dart';
+import 'package:chat_app/core/Widgets/message_box.dart';
 import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 

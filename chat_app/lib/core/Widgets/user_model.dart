@@ -1,4 +1,4 @@
-import 'package:chat_app/chat/chat_home.dart';
+import 'package:chat_app/features/chat/chat_home.dart';
 import 'package:flutter/material.dart';
 
 class UserInfo {

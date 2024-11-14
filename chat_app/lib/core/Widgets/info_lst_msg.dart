@@ -1,5 +1,5 @@
-import 'package:chat_app/Widgets/user_model.dart';
-import 'package:chat_app/chat/chat_home.dart';
+import 'package:chat_app/core/Widgets/user_model.dart';
+import 'package:chat_app/features/chat/chat_home.dart';
 import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 

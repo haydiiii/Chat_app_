@@ -1,5 +1,5 @@
-import 'package:chat_app/Widgets/fav_contacts.dart';
-import 'package:chat_app/Widgets/info_lst_msg.dart';
+import 'package:chat_app/core/Widgets/fav_contacts.dart';
+import 'package:chat_app/core/Widgets/info_lst_msg.dart';
 import 'package:chat_app/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
